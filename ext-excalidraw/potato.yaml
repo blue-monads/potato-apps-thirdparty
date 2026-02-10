@@ -1,0 +1,36 @@
+name: Excalidraw
+info: Excalidraw app
+slug: ext-excalidraw
+tags:
+  - productivity
+  - drawing
+  - whiteboard
+format_version: '0.0.2'
+author_name: Bornjre
+author_email: bornjre@gmail.com
+author_site: https://github.com/bornjre
+license: MIT
+version: '0.0.2'
+
+spaces:
+  - namespace: ext-excalidraw
+    executor_type: luaz
+    server_file: server.lua
+    is_default: true
+    route_options:
+      serve_folder: public
+      force_html_extension: false
+      force_index_html_file: true
+      on_not_found_file: index.html
+
+developer:
+  server_url: http://localhost:7777
+  token_env: SIMPLE_DEV_TOKEN
+  output_zip_file: package.spk.zip
+  include_files:
+    - 'ui/dist/**/*,public'
+    - server.lua
+    - 'init/init.html,public/init.html'
+    - 'init/schema.sql,schema.sql'
+    - 'ui/node_modules/@excalidraw/excalidraw/dist/prod/fonts/**/*,public/assets/fonts'
+  build_command: 'cd ui && { [ -d node_modules ] || bun install; } && bun run build'
