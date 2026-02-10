@@ -8,7 +8,7 @@ import { Excalidraw } from "@excalidraw/excalidraw"
 const Canvas = () => {
 
     return (
-        <div className="p-4">
+        <div className="p-4 min-h-screen">
             <Excalidraw
             theme="light"
             viewModeEnabled={true}

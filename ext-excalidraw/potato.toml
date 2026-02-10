@@ -29,5 +29,5 @@ is_default = true
 server_url = "http://localhost:7777"
 token_env = "SIMPLE_DEV_TOKEN"
 output_zip_file = "package.spk.zip"
-include_files = [ "ui/dist/**/*,public", "server.lua", "init/init.html,public/init.html", "init/schema.sql,schema.sql", "ext-excalidraw/ui/node_modules/@excalidraw/excalidraw/dist/prod/fonts/**/*,public"  ]
+include_files = [ "ui/dist/**/*,public", "server.lua", "init/init.html,public/init.html", "init/schema.sql,schema.sql", "ui/node_modules/@excalidraw/excalidraw/dist/prod/fonts/**/*,public/assets/fonts"  ]
 build_command = "cd ui && { [ -d node_modules ] || bun install; } && bun run build"
